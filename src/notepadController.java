@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class notepadController {
     private notepadModel model;
@@ -28,6 +32,17 @@ public class notepadController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 view.setText(model.copy(view.getTextArea().getText()));
+            }
+        });
+
+        view.getOpenButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.setText("");
+
+                String newText = model.open();
+
+                view.setText(newText);
             }
         });
 
