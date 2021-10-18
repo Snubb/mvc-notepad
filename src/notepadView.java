@@ -30,5 +30,8 @@ public class notepadView {
     public JTextArea getTextArea() {
         return textArea;
     }
+    public void setText(String text) {
+        textArea.setText(text);
+    }
 
 }

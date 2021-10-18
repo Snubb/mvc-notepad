@@ -20,15 +20,14 @@ public class notepadController {
         view.getClearButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.getTextArea().setText("");
+                view.setText("");
             }
         });
 
         view.getCopyButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.getTextArea().append("\n" + view.getTextArea().getText());
-                System.out.println(view.getTextArea().getText());
+                view.setText(model.copy(view.getTextArea().getText()));
             }
         });
 
